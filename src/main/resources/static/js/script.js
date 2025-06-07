@@ -1,0 +1,1 @@
+console.log("Certo che possiamo usare JS");
