@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greetings</title>
+
+    <!-- Bootstrap CSS -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.6/css/bootstrap.min.css}"/>
 </head>
 <body>
+
+    <header>
+        <nav th:replace="fragments/fragments :: navbar('Greetings page')" />
+    </header>
+
     <div>
         <h1 th:text="'Ciao ' + ${name} + '!'" />
-        <h2 th:text="'Sono le ore ' + ${time}" />
+        <h2 th:text="|Sono le ore ${time}, e tutto va bene|" />
         <h3 th:text="'Ecco il tuo intero: ' + ${intero} / 2" />
     </div> 
+
+        <!-- Bootstrap Bundle with Popper -->
+	
+
+    <script th:src="@{/webjars/bootstrap/5.3.6/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

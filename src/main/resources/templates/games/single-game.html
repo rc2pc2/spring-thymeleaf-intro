@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:replace="fragments/fragments :: head('Videogames')">
+    </th:block>
+</head>
+
+<body>
+    <header>
+        <nav th:replace="fragments/fragments :: navbar('Videogames')" />
+    </header>
+
+    <main class="container">
+        <section class="row py-3 justify-content-between align-items-center">
+            <article class="card col-12" th:object="${videogame}">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        [[*{name}]]
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                        [[*{genre}]]
+                    </h6>
+                    <p class="card-text">
+                        This game has been released on [[*{releaseDate}]]
+                    </p>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    Version [[*{version}]]
+                </div>
+            </article>
+        </section>
+
+
+    </main>
+
+    <th:block th:replace="fragments/fragments :: scripts">
+    </th:block>
+</body>
+
+</html>

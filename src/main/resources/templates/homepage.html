@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Greeting</title>
+    <th:block th:replace="fragments/fragments :: head('Videogames page')">
+    </th:block>
 </head>
+
 <body>
+    <header>
+        <nav th:replace="fragments/fragments :: navbar('Videogames index')" />
+    </header>
     <div>
         <h1>Homepage</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos excepturi harum non provident officia quae sequi natus accusantium nulla mollitia. Nisi repudiandae, voluptatum necessitatibus labore numquam ipsum explicabo laudantium enim.</p>

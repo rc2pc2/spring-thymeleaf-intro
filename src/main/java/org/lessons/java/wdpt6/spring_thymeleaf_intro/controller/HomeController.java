@@ -63,7 +63,14 @@ public class HomeController {
     @GetMapping("/videogames")
     public String games(Model model){
         model.addAttribute("videogames", getAllGames());
-        return "games/home";
+        return "games/index";
+    }
+
+    @GetMapping("/videogames/{index}") 
+    public String singleGame( Model model, @PathVariable("index") Integer index){
+        List<Game> videogames = getAllGames();
+        model.addAttribute("videogame", videogames.get(index));
+        return "games/single-game";
     }
 
     private List<Game> getAllGames(){
@@ -74,6 +81,7 @@ public class HomeController {
         videogamesList.add(new Game("The Legend of Zelda", "Cult", LocalDate.now(), "3.4.22"));
         videogamesList.add(new Game("League of Legends", "MOBA", LocalDate.now(), "12.4.22"));
         videogamesList.add(new Game("DOTA", "MOBA", LocalDate.now(), "11.4.22"));
+        videogamesList.add(new Game("Siege of Thieves", "PVP", LocalDate.now(), "13.4.22"));
 
         return videogamesList;
     }
